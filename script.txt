@@ -1,0 +1,17 @@
+create table Project(ProjectCode char(5) primary key,ProjectName varchar(20) unique not null)
+create table Employee(EmployeeId int primary key,EmployeeName varchar(20) not null,
+JoinDate Date,Salary int not null,Designation varchar(20) default 'Programmer', ProjectCode char(5) foreign key references Project(ProjectCode))
+
+insert into Project values('P0001','HealthCare')
+insert into Project values('P0002','SMS')
+insert into Project values('P0003','ABC Insurence')
+insert into Project values('P0004','BB Commerce')
+
+insert into Employee values(3412,'Prashanth','2.12.23',24000,'Associate Programmer','P0002')
+insert into Employee values(3434,'Manikandhan','2022-02-12',44000.00,'Sr Programmer','P0001')
+insert into Employee values(3445,'Srinivas','5.10.21',78000,'Sr Programmer','P0002')
+insert into Employee values(3450,'Saran','7.12.19',254000,'Associate Programmer','P0002')
+insert into Employee values(3456,'Ranjana','2.12.22',56000,'Associate Programmer','P0002')
+insert into Employee values(3478,'Naveen','9.12.20',88000,'Sr Programmer','P0002')
+insert into Employee values(3499,'Elekya','2.12.23',45000,'Associate Programmer','P0002')
+insert into Employee(EmployeeId,EmployeeName,Salary,Designation) values(8909,'Ayush',24000,'Associate Programmer')
